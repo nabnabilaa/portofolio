@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Galaxy</title>
+    <!-- Load AI Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/hands.js"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /* 1. PURE BLACK SCREEN - NO TEXT */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* 2. HIDE CAMERA (Opacity 0 keeps it active in background) */
+        #input_video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hidden Video Element -->
+    <video id="input_video" playsinline muted autoplay></video>
+
+    <!-- Import Three.js -->
+    <script type="importmap">
+        { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // --- 1. SETUP SCENE ---
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x000000, 0.002);
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.z = 180;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        document.body.appendChild(renderer.domElement);
+
+        // --- 2. GENERATE SHAPES ---
+        const particleCount = 20000;
+
+        const posSphere = new Float32Array(particleCount * 3);
+        const posVortex = new Float32Array(particleCount * 3);
+        const posHelix = new Float32Array(particleCount * 3);
+        const posSaturn = new Float32Array(particleCount * 3);
+        const posBang = new Float32Array(particleCount * 3);
+
+        const posCurrent = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const colorObj = new THREE.Color();
+
+        for (let i = 0; i < particleCount; i++) {
+            const i3 = i * 3;
+
+            // 0. SPHERE (Fist)
+            const r = 45;
+            const phi = Math.acos(-1 + (2 * i) / particleCount);
+            const theta = Math.sqrt(particleCount * Math.PI) * phi;
+            const fuzz = 1 + (Math.random() * 0.1);
+            posSphere[i3] = r * fuzz * Math.cos(theta) * Math.sin(phi);
+            posSphere[i3 + 1] = r * fuzz * Math.sin(theta) * Math.sin(phi);
+            posSphere[i3 + 2] = r * fuzz * Math.cos(phi);
+
+            // 1. VORTEX (1 Finger)
+            const vAngle = i * 0.15;
+            const vRad = 10 + (i / particleCount) * 110;
+            posVortex[i3] = Math.cos(vAngle) * vRad;
+            posVortex[i3 + 1] = (Math.random() - 0.5) * 15;
+            posVortex[i3 + 2] = Math.sin(vAngle) * vRad;
+
+            // 2. HELIX (2 Fingers)
+            const t = (i / particleCount) * 30 * Math.PI;
+            const offset = (i % 2 === 0) ? 0 : Math.PI;
+            posHelix[i3] = 30 * Math.cos(t + offset);
+            posHelix[i3 + 1] = (i / particleCount) * 250 - 125;
+            posHelix[i3 + 2] = 30 * Math.sin(t + offset);
+
+            // 3. SATURN (4 Fingers) - UPDATED: GIANT SIZE
+            // We give the planet a bit more density (40% of particles)
+            if (i < particleCount * 0.40) {
+                // PLANET BODY - Radius increased to 85 (Huge)
+                const pr = 85;
+                const pPhi = Math.acos(-1 + (2 * i) / (particleCount * 0.40));
+                const pTheta = Math.sqrt((particleCount * 0.40) * Math.PI) * pPhi;
+                posSaturn[i3] = pr * Math.cos(pTheta) * Math.sin(pPhi);
+                posSaturn[i3 + 1] = pr * Math.sin(pTheta) * Math.sin(pPhi);
+                posSaturn[i3 + 2] = pr * Math.cos(pPhi);
+            } else {
+                // RINGS - Start at 100 (gap) and go to 220 (Wide)
+                const ang = Math.random() * Math.PI * 2;
+                const rr = 100 + Math.random() * 120;
+
+                posSaturn[i3] = Math.cos(ang) * rr;
+                posSaturn[i3 + 1] = (Math.random() - 0.5) * 2; // Flat
+                posSaturn[i3 + 2] = Math.sin(ang) * rr;
+            }
+
+            // 4. BIG BANG (Open Hand) - EMPTY CENTER PRESERVED
+            const dir = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
+            // Distance 150+ to ensure empty center
+            const dist = 150 + Math.random() * 800;
+
+            posBang[i3] = dir.x * dist;
+            posBang[i3 + 1] = dir.y * dist;
+            posBang[i3 + 2] = dir.z * dist;
+
+            // Init State
+            posCurrent[i3] = posSphere[i3];
+            posCurrent[i3 + 1] = posSphere[i3 + 1];
+            posCurrent[i3 + 2] = posSphere[i3 + 2];
+
+            // GOLDEN ORANGE COLOR
+            colorObj.setHSL(0.08 + Math.random() * 0.02, 1.0, 0.6);
+            colors[i3] = colorObj.r;
+            colors[i3 + 1] = colorObj.g;
+            colors[i3 + 2] = colorObj.b;
+        }
+
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute('position', new THREE.BufferAttribute(posCurrent, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        // GLOW TEXTURE
+        const getSprite = () => {
+            const canvas = document.createElement('canvas'); canvas.width = 32; canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            const g = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+            g.addColorStop(0, 'rgba(255,255,255,1)');
+            g.addColorStop(0.2, 'rgba(255,220,100,0.8)');
+            g.addColorStop(0.5, 'rgba(255,150,0,0.3)');
+            g.addColorStop(1, 'rgba(0,0,0,0)');
+            ctx.fillStyle = g; ctx.fillRect(0, 0, 32, 32);
+            return new THREE.Texture(canvas);
+        };
+        const sprite = getSprite(); sprite.needsUpdate = true;
+
+        const material = new THREE.PointsMaterial({
+            size: 2.8,
+            map: sprite,
+            vertexColors: true,
+            blending: THREE.AdditiveBlending,
+            depthTest: false,
+            transparent: true,
+            opacity: 0.9
+        });
+
+        const particles = new THREE.Points(geometry, material);
+        scene.add(particles);
+
+        // --- AI LOGIC ---
+        let currentTarget = posSphere;
+        let lerpSpeed = 0.1;
+        let targetRotX = 0, targetRotY = 0;
+        let aiActive = false;
+
+        const video = document.getElementById('input_video');
+
+        async function startAI() {
+            const hands = new Hands({ locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/${file}` });
+
+            hands.setOptions({
+                maxNumHands: 1,
+                modelComplexity: 1,
+                minDetectionConfidence: 0.5,
+                minTrackingConfidence: 0.5
+            });
+
+            hands.onResults((results) => {
+                if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
+                    aiActive = true;
+                    const hand = results.multiHandLandmarks[0];
+                    const palm = hand[9];
+
+                    targetRotY = (palm.x - 0.5) * 5;
+                    targetRotX = (palm.y - 0.5) * 5;
+
+                    let count = 0;
+                    if (hand[8].y < hand[6].y) count++;
+                    if (hand[12].y < hand[10].y) count++;
+                    if (hand[16].y < hand[14].y) count++;
+                    if (hand[20].y < hand[18].y) count++;
+                    if (Math.abs(hand[4].x - hand[9].x) > 0.15) count++;
+
+                    if (count === 5) {
+                        currentTarget = posBang;
+                        lerpSpeed = 0.05;
+                    }
+                    else if (count === 4) {
+                        currentTarget = posSaturn;
+                        lerpSpeed = 0.08;
+                    }
+                    else if (count === 3) {
+                        currentTarget = posSaturn;
+                        lerpSpeed = 0.08;
+                    }
+                    else if (count === 2) {
+                        currentTarget = posHelix;
+                        lerpSpeed = 0.08;
+                    }
+                    else if (count === 1) {
+                        currentTarget = posVortex;
+                        lerpSpeed = 0.08;
+                    }
+                    else {
+                        currentTarget = posSphere;
+                        lerpSpeed = 0.15;
+                    }
+                }
+            });
+
+            const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+            video.srcObject = stream;
+            video.play();
+
+            const process = async () => {
+                if (video.videoWidth > 0) await hands.send({ image: video });
+                requestAnimationFrame(process);
+            };
+            process();
+        }
+
+        // --- RENDER LOOP ---
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = clock.getElapsedTime();
+
+            particles.rotation.y += (targetRotY - particles.rotation.y) * 0.08;
+            particles.rotation.x += (targetRotX - particles.rotation.x) * 0.08;
+            particles.rotation.z += 0.002;
+
+            if (!aiActive) {
+                const breath = 1 + Math.sin(time * 2) * 0.05;
+                particles.scale.set(breath, breath, breath);
+            } else {
+                particles.scale.set(1, 1, 1);
+            }
+
+            const pos = particles.geometry.attributes.position.array;
+
+            for (let i = 0; i < particleCount * 3; i++) {
+                pos[i] += (currentTarget[i] - pos[i]) * lerpSpeed;
+            }
+
+            particles.geometry.attributes.position.needsUpdate = true;
+            renderer.render(scene, camera);
+        }
+
+        startAI();
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+
+</html>

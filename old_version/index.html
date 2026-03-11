@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabila Melsyana — Developer Portfolio</title>
+    <meta name="description" content="Personal portfolio & biodata of Nabila Melsyana, a Full-Stack Developer based in Bandung, Indonesia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">⟨N/⟩</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#what-i-bring">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <canvas id="galaxy-canvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Nabila Melsyana</h1>
+            <p class="hero-title">
+                <span id="typed-text"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-desc">Full-Stack Developer delivering real web applications — from requirement to release.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator"><span></span></a>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- WHO I AM -->
+    <section id="about">
+        <div class="container" style="position:relative">
+            <span class="float-tag" style="top:-10px; right:5%; animation-delay:0s;">🔥 Passionate</span>
+            <span class="float-tag" style="top:40%; right:0; animation-delay:1.5s;">☕ Coffee-Driven</span>
+            <span class="float-tag" style="bottom:15%; left:0; animation-delay:3s;">🚀 Always Shipping</span>
+
+            <div class="wia-header reveal">
+                <span class="section-badge-mono">// About Me</span>
+                <h2 class="section-title-bold">Who I Am</h2>
+            </div>
+
+            <!-- Story + Education row -->
+            <div class="wia-grid reveal stagger-1">
+                <div class="wia-story">
+                    <p class="wia-summary">Full-Stack Developer with hands-on experience delivering real web applications across internal platforms, AI products, learning systems, and healthcare workflows.</p>
+                    <p class="wia-detail">At MAXY Academy through the Kemnaker MagangHub program, handled end-to-end delivery from requirement discussion and solution planning to implementation, testing, mentoring, and release support while helping lead 16 interns across 5 concurrent projects. Strong in Laravel, JavaScript/TypeScript, SQL, REST API, and modular web systems.</p>
+                </div>
+                <div class="wia-sidebar">
+                    <!-- Education Card -->
+                    <div class="wia-edu-card">
+                        <div class="wia-edu-icon" style="background:rgba(56,189,248,.1);">🎓</div>
+                        <div class="wia-edu-info">
+                            <h4>Bachelor of Information Systems</h4>
+                            <p>Telkom University</p>
+                        </div>
+                        <div class="wia-edu-meta">
+                            <span>2021 — 2025</span>
+                            <span class="wia-gpa">GPA: 3.70</span>
+                        </div>
+                    </div>
+                    <!-- Certification Card -->
+                    <div class="wia-edu-card">
+                        <div class="wia-edu-icon" style="background:rgba(251,191,36,.1);">🏆</div>
+                        <div class="wia-edu-info">
+                            <h4>BNSP — System Analyst</h4>
+                            <p>Certified Professional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traits -->
+            <div class="traits-grid reveal stagger-2">
+                <div class="trait-card">
+                    <div class="trait-icon">🔥</div>
+                    <h4>End-to-End Delivery</h4>
+                    <p>From requirement discussion to release support, owning the full development cycle</p>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon">👥</div>
+                    <h4>Team Leadership</h4>
+                    <p>Led 16 interns across 5 concurrent projects, mentoring and resolving blockers</p>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon">🚀</div>
+                    <h4>Fast Learner</h4>
+                    <p>Rapidly adapting across new stacks using disciplined AI-assisted development</p>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon">🤖</div>
+                    <h4>AI Integration</h4>
+                    <p>Building AI-powered products with Gemini API, Groq API, and OCR workflows</p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-row reveal stagger-3">
+                <div class="bento-card bento-stat reveal-scale">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="bento-card bento-stat reveal-scale">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Professional Experiences</div>
+                </div>
+                <div class="bento-card bento-stat reveal-scale">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- WHAT I BRING -->
+    <section id="what-i-bring">
+        <div class="container" style="position:relative">
+            <div class="wib-dot-pattern"></div>
+
+            <div class="wia-header reveal">
+                <span class="section-badge-mono">// Skills &amp; Expertise</span>
+                <h2 class="section-title-bold">What I Bring</h2>
+            </div>
+
+            <!-- Category Cards — feature-card style with tilt -->
+            <div class="wib-categories">
+                <div class="feature-card wib-cat-card active reveal stagger-1" data-category="programming">
+                    <div class="feature-icon-wrap"><span>⟨/⟩</span></div>
+                    <h3>Programming &amp; Web</h3>
+                    <p>Core languages and web technologies</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="feature-card wib-cat-card reveal stagger-2" data-category="productQA">
+                    <div class="feature-icon-wrap"
+                        style="background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(56,189,248,.04))">
+                        <span>✓</span>
+                    </div>
+                    <h3>Engineering &amp; Delivery</h3>
+                    <p>System analysis, testing, and delivery process</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="feature-card wib-cat-card reveal stagger-3" data-category="data">
+                    <div class="feature-icon-wrap"
+                        style="background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(251,191,36,.04))">
+                        <span>📊</span>
+                    </div>
+                    <h3>Databases &amp; Storage</h3>
+                    <p>Database management and state solutions</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="86"></div>
+                    </div>
+                </div>
+                <div class="feature-card wib-cat-card reveal stagger-4" data-category="tools">
+                    <div class="feature-icon-wrap"
+                        style="background:linear-gradient(135deg,rgba(167,139,250,.12),rgba(167,139,250,.04))">
+                        <span>🔧</span>
+                    </div>
+                    <h3>Tools &amp; Platforms</h3>
+                    <p>Development and collaboration tools</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="80"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Detail Panels - Tag Cards -->
+            <div class="wib-panels reveal stagger-3">
+                <div class="wib-skills-panel active" data-category="programming">
+                    <div class="wib-panel-header"><span style="color:#00e5a0">⟨/⟩</span> Programming &amp; Web</div>
+                    <div class="wib-tags-grid">
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🐘</span><span>PHP</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">⚡</span><span>JavaScript</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🔷</span><span>TypeScript</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🗄️</span><span>SQL</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">☕</span><span>Java</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🌐</span><span>HTML / CSS</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🏗️</span><span>Laravel</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">⚛️</span><span>React</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">▲</span><span>Next.js</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🎨</span><span>Tailwind CSS</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🔌</span><span>REST API</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🚀</span><span>Express.js</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">⚡</span><span>Fastify</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#00e5a0"><span
+                                class="wib-tag-icon">🔗</span><span>Socket.io</span></div>
+                    </div>
+                </div>
+                <div class="wib-skills-panel" data-category="productQA">
+                    <div class="wib-panel-header"><span style="color:#38bdf8">✓</span> Engineering &amp; Delivery</div>
+                    <div class="wib-tags-grid">
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">📐</span><span>System Analysis</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">🔄</span><span>Agile / Scrum</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">🧪</span><span>Functional Testing</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">✅</span><span>UAT</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">📝</span><span>Documentation</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">🎨</span><span>UI/UX/CX Collaboration</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">🚀</span><span>Rapid Prototyping</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">👥</span><span>Mentoring</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#38bdf8"><span
+                                class="wib-tag-icon">🤖</span><span>AI-Assisted Dev</span></div>
+                    </div>
+                </div>
+                <div class="wib-skills-panel" data-category="data">
+                    <div class="wib-panel-header"><span style="color:#fbbf24">📊</span> Databases &amp; Storage</div>
+                    <div class="wib-tags-grid">
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">🗄️</span><span>MySQL</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">🐘</span><span>PostgreSQL</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">💾</span><span>SQLite</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">📐</span><span>MVC Pattern</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">📊</span><span>Zustand</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">✅</span><span>Zod</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#fbbf24"><span
+                                class="wib-tag-icon">📝</span><span>React Hook Form</span></div>
+                    </div>
+                </div>
+                <div class="wib-skills-panel" data-category="tools">
+                    <div class="wib-panel-header"><span style="color:#a78bfa">🔧</span> Tools &amp; Platforms</div>
+                    <div class="wib-tags-grid">
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">🐙</span><span>Git</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">🐙</span><span>GitHub / GitLab</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">🐳</span><span>Docker</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">🔧</span><span>Postman</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">⚡</span><span>Vite</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">📦</span><span>pnpm</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">💻</span><span>VS Code</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">🎨</span><span>Figma</span></div>
+                        <div class="wib-tag-card" style="--tag-color:#a78bfa"><span
+                                class="wib-tag-icon">📐</span><span>Visual Paradigm</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Marquee tech scroll -->
+        <div class="marquee-wrap reveal stagger-4">
+            <div class="marquee">
+                <span>PHP</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>Java</span><span>HTML</span><span>CSS</span><span>Laravel</span><span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>Express.js</span><span>Fastify</span><span>Socket.io</span><span>MySQL</span><span>PostgreSQL</span><span>SQLite</span><span>Docker</span><span>Git</span><span>Figma</span>
+                <!-- duplicate for seamless loop -->
+                <span>PHP</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>Java</span><span>HTML</span><span>CSS</span><span>Laravel</span><span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>Express.js</span><span>Fastify</span><span>Socket.io</span><span>MySQL</span><span>PostgreSQL</span><span>SQLite</span><span>Docker</span><span>Git</span><span>Figma</span>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Projects</span>
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-sub">Projects that showcase my skills and passion.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-card showcase-large reveal">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#667eea,#764ba2);">
+                        <span class="showcase-emoji">🤖</span>
+                        <div class="showcase-overlay">
+                            <a href="#" class="btn btn-primary btn-sm">View →</a>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags">
+                            <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>Gemini API</span>
+                        </div>
+                        <h3>AI Vero — AI Agent Platform</h3>
+                        <p>Web-based platform for creating and managing custom AI agents. Features guided agent creation, dual-layer knowledge management, text & voice interaction, and location-based integration.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-1">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#f093fb,#f5576c);">
+                        <span class="showcase-emoji">🏥</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>React 19</span><span>TypeScript</span><span>SQLite</span><span>Gemini API</span></div>
+                        <h3>Healthcare Management System</h3>
+                        <p>Healthcare system with role-based portals for six user roles. Covers patient portal, queue management, EMR, pharmacy, billing, and analytics.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-2">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">
+                        <span class="showcase-emoji">🧾</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>React 19</span><span>Express.js</span><span>Gemini API</span></div>
+                        <h3>SplitBill OCR</h3>
+                        <p>OCR-powered split-bill app that extracts receipt items, prices, tax & service charges. AI-assisted parsing with local data persistence.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-3">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#fa709a,#fee140);">
+                        <span class="showcase-emoji">🎙️</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>React 19</span><span>TypeScript</span><span>Gemini API</span></div>
+                        <h3>AI Voice CS Platform</h3>
+                        <p>AI-powered customer service prototype with text chatbot and real-time voice-call testing. Knowledge-base driven response flows.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-4">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">
+                        <span class="showcase-emoji">📚</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>Laravel 12</span><span>React 18</span><span>Fastify</span><span>Socket.io</span></div>
+                        <h3>Virtual Intern LMS</h3>
+                        <p>Multi-service learning management system for virtual internship delivery. Covers auth, live meetings, collaboration, surveys & document workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-sub">My path through code, creativity, and learning.</p>
+            </div>
+            <div class="timeline">
+                <div class="tl-item reveal-left stagger-1">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">Oct 2025 — Present</span>
+                        <h3>Full-Stack Developer Associate — MAXY Academy</h3>
+                        <p>Delivered real-world web apps for internal & client projects. Owned end-to-end execution. Led 16 interns across 5 concurrent projects.</p>
+                        <div class="tl-tags"><span>Laravel</span><span>React</span><span>Next.js</span><span>TypeScript</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-2">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">Aug 2024 — Dec 2024</span>
+                        <h3>Full-Stack Developer Intern — Kemendikbudristek</h3>
+                        <p>Contributed to SISTER infrastructure module and SISARPRAS re-engineering. Sprint planning, code review, and documentation workflows.</p>
+                        <div class="tl-tags"><span>Laravel</span><span>PHP</span><span>Agile</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-3">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">Jun 2024 — Aug 2024</span>
+                        <h3>Data Management Intern — Telkom Indonesia</h3>
+                        <p>Validated and cross-checked operational datasets. Prepared recurring summaries and reports with documented update procedures.</p>
+                        <div class="tl-tags"><span>Data Management</span><span>Reporting</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-4">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">Sep 2023 — Jun 2024</span>
+                        <h3>Practicum Assistant — Telkom University</h3>
+                        <p>Guided students in requirements identification, UML modeling, and Java OOP labs. Practice materials, code review, and assessment support.</p>
+                        <div class="tl-tags"><span>Java</span><span>UML</span><span>Teaching</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-5">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge tl-edu">🎓 2021 — 2025</span>
+                        <h3>Bachelor of Information Systems — Telkom University</h3>
+                        <p>GPA: 3.70/4.00. BNSP Certified System Analyst.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <div class="cta-glow"></div>
+                <div class="section-header">
+                    <span class="section-badge">Contact</span>
+                    <h2 class="section-title">Let's Build Together</h2>
+                    <p class="section-sub">Got a project or idea? I'm always open to collaborate.</p>
+                </div>
+                <div class="cta-grid">
+                    <form id="contact-form" class="cta-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <textarea rows="4" placeholder="Tell me about your project..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message ✉️</button>
+                    </form>
+                    <div class="cta-socials">
+                        <a href="mailto:nabilamelsyana5@gmail.com" class="social-link">
+                            <span class="sl-icon">📧</span>
+                            <div><strong>Email</strong>
+                                <p>nabilamelsyana5@gmail.com</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <span class="sl-icon">🐙</span>
+                            <div><strong>GitHub</strong>
+                                <p>github.com</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <span class="sl-icon">💼</span>
+                            <div><strong>LinkedIn</strong>
+                                <p>linkedin.com</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                        <a href="https://wa.me/628885169997" target="_blank" class="social-link">
+                            <span class="sl-icon">💬</span>
+                            <div><strong>WhatsApp</strong>
+                                <p>+62 888 516 9997</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINI GAME — Catch the Coffee ☕ -->
+    <section id="mini-game">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">🎮 Mini Game</span>
+                <h2 class="section-title">Catch the Coffee!</h2>
+                <p class="section-sub">Bored? Take a break and play this mini game. Catch coffee & snacks, dodge the
+                    bugs!</p>
+            </div>
+
+            <div class="game-wrapper reveal">
+                <div class="game-hud">
+                    <div class="hud-item"><span class="hud-label">Score</span><span class="hud-val"
+                            id="game-score">0</span></div>
+                    <div class="hud-item"><span class="hud-label">Level</span><span class="hud-val"
+                            id="game-level">1</span></div>
+                    <div class="hud-item"><span class="hud-label">Lives</span><span class="hud-val"
+                            id="game-lives">❤️❤️❤️</span></div>
+                    <div class="hud-item"><span class="hud-label">Best</span><span class="hud-val"
+                            id="game-best">0</span></div>
+                </div>
+
+                <div class="game-arena" id="game-arena">
+                    <!-- Start overlay -->
+                    <div class="game-overlay" id="game-start-overlay">
+                        <div class="game-overlay-content">
+                            <div class="game-ov-emoji">☕</div>
+                            <h3>Catch the Coffee!</h3>
+                            <p>Move your mouse (or finger) to catch falling items. Dodge the bugs! Don't miss food!</p>
+                            <div class="game-legend">
+                                <span>☕ +1</span>
+                                <span>🍕 +2</span>
+                                <span>⭐ +5</span>
+                                <span>💎 +10</span>
+                                <span class="game-legend-heal">❤️‍🔥 +1❤️</span>
+                                <span class="game-legend-bad">🐛🪲🕷️ −1❤️</span>
+                                <span class="game-legend-bad">Miss −1❤️</span>
+                            </div>
+                            <button class="btn btn-primary" id="game-play-btn">Play! 🚀</button>
+                        </div>
+                    </div>
+
+                    <!-- Game over overlay -->
+                    <div class="game-overlay" id="game-over-overlay" style="display:none">
+                        <div class="game-overlay-content">
+                            <div class="game-ov-emoji" id="game-over-emoji">😵</div>
+                            <h3>Game Over!</h3>
+                            <p>Score: <strong id="game-final-score">0</strong></p>
+                            <p id="game-over-msg" class="game-over-msg"></p>
+                            <button class="btn btn-primary" id="game-retry-btn">Try Again 🔄</button>
+                        </div>
+                    </div>
+
+                    <!-- Player basket -->
+                    <div class="game-player" id="game-player">🧺</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+            <a href="#hero" class="nav-logo">⟨N/⟩</a>
+            <p>&copy; 2026 Nabila Melsyana. Crafted with ❤️ & ☕ in Bandung.</p>
+            <div class="footer-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="mailto:nabilamelsyana5@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="app.js" defer></script>
+</body>
+
+</html>

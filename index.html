@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabil — Developer Portfolio</title>
+    <meta name="description" content="Personal portfolio & biodata of Nabil, a passionate software developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">⟨N/⟩</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <canvas id="galaxy-canvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Nabil Arfian</h1>
+            <p class="hero-title">
+                <span id="typed-text"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-desc">Turning complex problems into elegant solutions — one line of code at a time.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator"><span></span></a>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container" style="position:relative">
+            <!-- Floating decorative tags -->
+            <span class="float-tag" style="top:-10px; right:5%; animation-delay:0s;">🔥 Passionate</span>
+            <span class="float-tag" style="top:40%; right:0; animation-delay:1.5s;">☕ Coffee-Driven</span>
+            <span class="float-tag" style="bottom:15%; left:0; animation-delay:3s;">🚀 Always Shipping</span>
+
+            <div class="section-header reveal">
+                <span class="section-badge">About</span>
+                <h2 class="section-title">Get to Know Me</h2>
+                <p class="section-sub">Passionate developer crafting beautiful digital experiences from Bandung.</p>
+            </div>
+            <div class="bento-grid">
+                <div class="bento-card bento-main reveal">
+                    <div class="photo-frame">
+                        <div class="photo-placeholder">N</div>
+                    </div>
+                    <div class="bento-bio">
+                        <h3>Muhammad Nabil Arfian</h3>
+                        <p class="bento-role">Full-Stack Developer</p>
+                        <p class="bento-desc">3+ years building web apps. I love clean architecture, interactive 3D, and
+                            shipping products that make impact. When not coding, I explore AI and creative coding.</p>
+                        <a href="#" class="btn btn-primary btn-sm">📄 Download CV</a>
+                    </div>
+                </div>
+                <div class="bento-card bento-info reveal stagger-1">
+                    <div class="info-item"><span class="info-icon">📍</span>
+                        <div><span class="info-label">Location</span><span class="info-val">Bandung, West Java</span>
+                        </div>
+                    </div>
+                    <div class="info-item"><span class="info-icon">🎂</span>
+                        <div><span class="info-label">Birthday</span><span class="info-val">15 March 2001</span></div>
+                    </div>
+                    <div class="info-item"><span class="info-icon">📧</span>
+                        <div><span class="info-label">Email</span><span class="info-val">nabil.arfian@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="info-item"><span class="info-icon">📱</span>
+                        <div><span class="info-label">Phone</span><span class="info-val">+62 812 3456 7890</span></div>
+                    </div>
+                    <div class="info-item"><span class="info-icon">🌐</span>
+                        <div><span class="info-label">Languages</span><span class="info-val">Indonesian, English</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-card bento-stat reveal-scale stagger-2">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="bento-card bento-stat reveal-scale stagger-3">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="bento-card bento-stat reveal-scale stagger-4">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Skills</span>
+                <h2 class="section-title">Technologies I Work With</h2>
+                <p class="section-sub">Versatile skill set spanning front-end, back-end, and creative coding.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal stagger-1">
+                    <div class="feature-icon-wrap"><span>🌐</span></div>
+                    <h3>HTML / CSS / SASS</h3>
+                    <p>Pixel-perfect responsive layouts with modern animations.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-2">
+                    <div class="feature-icon-wrap"><span>⚡</span></div>
+                    <h3>JavaScript / TypeScript</h3>
+                    <p>Modern ES6+, async patterns, type-safe development.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-3">
+                    <div class="feature-icon-wrap"><span>🐘</span></div>
+                    <h3>PHP / Laravel</h3>
+                    <p>RESTful APIs, MVC, Eloquent ORM, scalable backends.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="88"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-4">
+                    <div class="feature-icon-wrap"><span>⚛️</span></div>
+                    <h3>React / Next.js</h3>
+                    <p>Component-driven UIs, SSR, hooks, state management.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="82"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-5">
+                    <div class="feature-icon-wrap"><span>🐍</span></div>
+                    <h3>Python / Flask</h3>
+                    <p>APIs, data processing, AI/ML integrations.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="78"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-6">
+                    <div class="feature-icon-wrap"><span>🗄️</span></div>
+                    <h3>MySQL / PostgreSQL</h3>
+                    <p>Database design, optimization, data modeling.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-7">
+                    <div class="feature-icon-wrap"><span>🎨</span></div>
+                    <h3>Three.js / WebGL</h3>
+                    <p>3D visualizations, particle systems, shaders.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="feature-card reveal stagger-8">
+                    <div class="feature-icon-wrap"><span>🐙</span></div>
+                    <h3>Git / Docker / CI-CD</h3>
+                    <p>Version control, containers, deployment pipelines.</p>
+                    <div class="feature-bar">
+                        <div class="feature-fill" data-width="83"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marquee tech scroll -->
+            <div class="marquee-wrap reveal">
+                <div class="marquee">
+                    <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Vue.js</span><span>Node.js</span><span>PHP</span><span>Laravel</span><span>Python</span><span>Flask</span><span>Three.js</span><span>WebGL</span><span>MySQL</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>AWS</span><span>Git</span><span>Figma</span><span>Tailwind
+                        CSS</span>
+                    <!-- duplicate for seamless loop -->
+                    <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Vue.js</span><span>Node.js</span><span>PHP</span><span>Laravel</span><span>Python</span><span>Flask</span><span>Three.js</span><span>WebGL</span><span>MySQL</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>AWS</span><span>Git</span><span>Figma</span><span>Tailwind
+                        CSS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Projects</span>
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-sub">Projects that showcase my skills and passion.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-card showcase-large reveal">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#667eea,#764ba2);">
+                        <span class="showcase-emoji">🌌</span>
+                        <div class="showcase-overlay">
+                            <a href="html.html" target="_blank" class="btn btn-primary btn-sm">Live Demo →</a>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags">
+                            <span>Three.js</span><span>MediaPipe</span><span>WebGL</span><span>GLSL</span>
+                        </div>
+                        <h3>Galaxy Particle Engine</h3>
+                        <p>Interactive 3D engine with 15,000+ particles morphing between Galaxy, Vortex, Sphere & Helix.
+                            AI hand-tracking for gesture control.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-1">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#f093fb,#f5576c);">
+                        <span class="showcase-emoji">🛒</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>Laravel</span><span>Vue.js</span><span>Midtrans</span></div>
+                        <h3>TokoKu — E-Commerce</h3>
+                        <p>Full-stack marketplace with payment gateway, real-time tracking & admin analytics.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-2">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">
+                        <span class="showcase-emoji">📋</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>React</span><span>Node.js</span><span>Socket.io</span></div>
+                        <h3>FlowBoard — Task Manager</h3>
+                        <p>Kanban board with drag-and-drop, Slack integration & WebSocket notifications.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-3">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#fa709a,#fee140);">
+                        <span class="showcase-emoji">🤖</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>Python</span><span>LangChain</span><span>OpenAI</span></div>
+                        <h3>ChatDoc AI</h3>
+                        <p>Upload PDFs and chat with your content using RAG + OpenAI embeddings.</p>
+                    </div>
+                </div>
+                <div class="showcase-card reveal stagger-4">
+                    <div class="showcase-visual" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">
+                        <span class="showcase-emoji">🏥</span>
+                        <div class="showcase-overlay"><a href="#" class="btn btn-primary btn-sm">View →</a></div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-tags"><span>Laravel</span><span>Livewire</span><span>MySQL</span></div>
+                        <h3>SiKlinik — Clinic Manager</h3>
+                        <p>Patient records, scheduling, prescriptions & PDF billing reports.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-sub">My path through code, creativity, and learning.</p>
+            </div>
+            <div class="timeline">
+                <div class="tl-item reveal-left stagger-1">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">2025 — Present</span>
+                        <h3>Freelance Full-Stack Developer</h3>
+                        <p>Custom web apps for startups & SMEs. 12+ projects delivered. Rating: 4.9/5.</p>
+                        <div class="tl-tags"><span>Laravel</span><span>React</span><span>Three.js</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-2">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">2023 — 2025</span>
+                        <h3>Web Developer — PT Digital Nusantara</h3>
+                        <p>Built 8 client-facing apps. Reduced load time by 40% through optimization.</p>
+                        <div class="tl-tags"><span>Laravel</span><span>React</span><span>PostgreSQL</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-3">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge">2022 — 2023</span>
+                        <h3>Intern — Tokopedia</h3>
+                        <p>Seller dashboard team. Shipped UI components, fixed 50+ bugs, agile sprints.</p>
+                        <div class="tl-tags"><span>React</span><span>Go</span><span>Microservices</span></div>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-4">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge tl-edu">🎓 2019 — 2023</span>
+                        <h3>S1 Teknik Informatika — UNPAD</h3>
+                        <p>GPA: 3.78/4.00. Thesis: hand gesture recognition for 3D visualization.</p>
+                    </div>
+                </div>
+                <div class="tl-item reveal-left stagger-5">
+                    <div class="tl-marker">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-content">
+                        <span class="tl-badge tl-edu">🏫 2016 — 2019</span>
+                        <h3>SMAN 3 Bandung</h3>
+                        <p>IPA. LKS web development winner. First exposure to programming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <div class="cta-glow"></div>
+                <div class="section-header">
+                    <span class="section-badge">Contact</span>
+                    <h2 class="section-title">Let's Build Together</h2>
+                    <p class="section-sub">Got a project or idea? I'm always open to collaborate.</p>
+                </div>
+                <div class="cta-grid">
+                    <form id="contact-form" class="cta-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <textarea rows="4" placeholder="Tell me about your project..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message ✉️</button>
+                    </form>
+                    <div class="cta-socials">
+                        <a href="mailto:nabil.arfian@gmail.com" class="social-link">
+                            <span class="sl-icon">📧</span>
+                            <div><strong>Email</strong>
+                                <p>nabil.arfian@gmail.com</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                        <a href="https://github.com/nabilarfian" target="_blank" class="social-link">
+                            <span class="sl-icon">🐙</span>
+                            <div><strong>GitHub</strong>
+                                <p>github.com/nabilarfian</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                        <a href="https://linkedin.com/in/nabilarfian" target="_blank" class="social-link">
+                            <span class="sl-icon">💼</span>
+                            <div><strong>LinkedIn</strong>
+                                <p>linkedin.com/in/nabilarfian</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="social-link">
+                            <span class="sl-icon">💬</span>
+                            <div><strong>WhatsApp</strong>
+                                <p>+62 812 3456 7890</p>
+                            </div>
+                            <span class="sl-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINI GAME — Catch the Coffee ☕ -->
+    <section id="mini-game">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">🎮 Mini Game</span>
+                <h2 class="section-title">Catch the Coffee!</h2>
+                <p class="section-sub">Bored? Take a break and play this mini game. Catch coffee & snacks, dodge the
+                    bugs!</p>
+            </div>
+
+            <div class="game-wrapper reveal">
+                <div class="game-hud">
+                    <div class="hud-item"><span class="hud-label">Score</span><span class="hud-val"
+                            id="game-score">0</span></div>
+                    <div class="hud-item"><span class="hud-label">Level</span><span class="hud-val"
+                            id="game-level">1</span></div>
+                    <div class="hud-item"><span class="hud-label">Lives</span><span class="hud-val"
+                            id="game-lives">❤️❤️❤️</span></div>
+                    <div class="hud-item"><span class="hud-label">Best</span><span class="hud-val"
+                            id="game-best">0</span></div>
+                </div>
+
+                <div class="game-arena" id="game-arena">
+                    <!-- Start overlay -->
+                    <div class="game-overlay" id="game-start-overlay">
+                        <div class="game-overlay-content">
+                            <div class="game-ov-emoji">☕</div>
+                            <h3>Catch the Coffee!</h3>
+                            <p>Move your mouse (or finger) to catch falling items. Dodge the bugs!</p>
+                            <div class="game-legend">
+                                <span>☕ +1</span>
+                                <span>🍕 +2</span>
+                                <span>⭐ +5</span>
+                                <span>💎 +10</span>
+                                <span class="game-legend-bad">🐛🪲🕷️ −1❤️</span>
+                            </div>
+                            <button class="btn btn-primary" id="game-play-btn">Play! 🚀</button>
+                        </div>
+                    </div>
+
+                    <!-- Game over overlay -->
+                    <div class="game-overlay" id="game-over-overlay" style="display:none">
+                        <div class="game-overlay-content">
+                            <div class="game-ov-emoji" id="game-over-emoji">😵</div>
+                            <h3>Game Over!</h3>
+                            <p>Score: <strong id="game-final-score">0</strong></p>
+                            <p id="game-over-msg" class="game-over-msg"></p>
+                            <button class="btn btn-primary" id="game-retry-btn">Try Again 🔄</button>
+                        </div>
+                    </div>
+
+                    <!-- Player basket -->
+                    <div class="game-player" id="game-player">🧺</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+            <a href="#hero" class="nav-logo">⟨N/⟩</a>
+            <p>&copy; 2026 Nabil Arfian. Crafted with ❤️ & ☕ in Bandung.</p>
+            <div class="footer-links">
+                <a href="https://github.com/nabilarfian" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/nabilarfian" target="_blank">LinkedIn</a>
+                <a href="mailto:nabil.arfian@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="app.js" defer></script>
+</body>
+
+</html>
