@@ -467,10 +467,31 @@ window.addEventListener('scroll', () => {
 // ===========================================
 document.getElementById('contact-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Sent! ✅';
-    btn.style.background = 'linear-gradient(135deg, #00c853, #00e676)';
-    setTimeout(() => { btn.textContent = 'Send Message ✉️'; btn.style.background = ''; e.target.reset(); }, 2500);
+    const form = e.target;
+    const btn = form.querySelector('button');
+    
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            btn.textContent = 'Sent! ✅';
+            btn.style.background = 'linear-gradient(135deg, #00c853, #00e676)';
+            setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; form.reset(); }, 2500);
+        } else {
+            throw new Error('Network response was not ok');
+        }
+    }).catch(error => {
+        btn.textContent = 'Error! ❌';
+        btn.style.background = 'linear-gradient(135deg, #ff1744, #d50000)';
+        setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 2500);
+    });
 });
 
 // ===========================================
